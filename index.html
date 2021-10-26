@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Weight Converter </title>
+</head>
+<body>
+
+<table align="center">
+    <tr>
+        <td>
+           <h3>  Weight Converter </h3>
+           <b> From:</b><br>
+           <select id="fsi" style="width: 250px; height: 25px;border-radius: 5px">
+               <option disabled="true" selected="true">-Select Weight-</option>
+               <option >Kilogram</option>
+               <option >Ounces</option>
+               <option >Gram</option>
+               <option >Pound</option>
+               <option >Stones</option>
+           </select>
+           <br><br>
+            <b> To:</b><br>
+           <select id="tsi" style="width: 250px;  height: 25px;border-radius: 5px">
+               <option disabled="true" selected="true">-Select Weight-</option>
+               <option >Kilogram</option>
+               <option >Ounces</option>
+               <option >Gram</option>
+               <option >Pound</option>
+               <option >Stones</option>
+           </select>
+           <br><br>
+           <b> Value: </b><br>
+               <input id="ip"  style="width: 248px;  height: 23px;border-radius: 5px;background-color: #FDFF8B;" required="">
+            <br><br>
+            <button onclick="getInputValue();" style="width: 80px;  height: 30px;border-radius: 5px; background-color: #438DF7 ;border-color: #2F82FA"><font color="white"> Convert</font> </button>
+            <br>
+            <div  style="width: 400px;  height: 45px;background-color: #D2D2D3; align-items: center;">
+            <p id="ci" style=" padding-top: 10px; margin-left: 20px; color: green"></p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    
+   function getInputValue(){
+    var pnd,kg,ouns,gm,stn =0;
+    var ip = document.getElementById("ip").value;
+     var ci = document.getElementById("ci"); 
+     var tsi = document.getElementById("tsi").value;
+     var fsi = document.getElementById("fsi").value;
+// _Kilogram to other _________________________________________________________________
+     if( fsi == "Kilogram" && tsi == "Pound")
+    {
+            pnd = ip*2.2046;
+            ci.innerHTML = " Converted Value ("+ tsi +" ) : "+pnd;
+    }
+    else if( fsi == "Kilogram" && tsi == "Ounces" )
+    {
+        ouns = ip * 35.274;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ouns;
+    }
+    else if( fsi == "Kilogram" && tsi == "Gram" )
+    {
+        gram = ip * 1000;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ gram;
+    }
+    else if( fsi == "Kilogram" && tsi == "Stones" )
+    {
+        stn = ip*0.1574;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ stn;
+    }
+    else if( fsi == "Kilogram" && tsi == "Kilogram" )
+    {
+        stn = ip;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ stn;
+    }
+// Ounces to other_____________________________________________________________
+    else if( fsi == "Ounces" && tsi == "Pound")
+    {
+            pnd = ip * 0.0625;
+            ci.innerHTML = " Converted Value ("+ tsi +" ) : "+pnd;
+    }
+    else if( fsi == "Ounces" && tsi == "Ounces" )
+    {
+        ouns = ip ;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ouns;
+    }
+    else if( fsi == "Ounces" && tsi == "Gram" )
+    {
+        gram = ip/0.035274;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ gram;
+    }
+    else if( fsi == "Ounces" && tsi == "Stones" )
+    {
+        stn = ip*0.0044643;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ stn;
+    }
+    else if( fsi == "Ounces" && tsi == "Kilogram" )
+    {
+        kg = ip/35.274;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ kg;
+    }
+// Gram to other_____________________________________________________________
+    else if( fsi == "Gram" && tsi == "Pound")
+    {
+            pnd = ip*0.0022046;
+            ci.innerHTML = " Converted Value ("+ tsi +" ) : "+pnd;
+    }
+    else if( fsi == "Gram" && tsi == "Ounces" )
+    {
+        ouns = ip *0.035274 ;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ouns;
+    }
+    else if( fsi == "Gram" && tsi == "Gram" )
+    {
+        gram = ip;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ gram;
+    }
+    else if( fsi == "Gram" && tsi == "Stones" )
+    {
+        stn = ip*0.00015747;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ stn;
+    }
+    else if( fsi == "Gram" && tsi == "Kilogram" )
+    {
+        kg = ip/1000;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ kg;
+    }
+// Pound to other_____________________________________________________________
+    else if( fsi == "Pound" && tsi == "Pound")
+    {
+            pnd = ip;
+            ci.innerHTML = " Converted Value ("+ tsi +" ) : "+pnd;
+    }
+    else if( fsi == "Pound" && tsi == "Ounces" )
+    {
+        ouns = ip *16 ;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ouns;
+    }
+    else if( fsi == "Pound" && tsi == "Gram" )
+    {
+        gram = ip /0.0022046;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ gram;
+    }
+    else if( fsi == "Pound" && tsi == "Stones" )
+    {
+        stn = ip*0.071429;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ stn;
+    }
+    else if( fsi == "Pound" && tsi == "Kilogram" )
+    {
+        kg = ip/2.2046;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ kg;
+    }
+// Stones to other_____________________________________________________________
+    else if( fsi == "Stones" && tsi == "Pound")
+    {
+            pnd = ip *14;
+            ci.innerHTML = " Converted Value ("+ tsi +" ) : "+pnd;
+    }
+    else if( fsi == "Stones" && tsi == "Ounces" )
+    {
+        ouns = ip *224 ;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ouns;
+    }
+    else if( fsi == "Stones" && tsi == "Gram" )
+    {
+        gram = ip /0.00015747;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ gram;
+    }
+    else if( fsi == "Stones" && tsi == "Stones" )
+    {
+        stn = ip;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ stn;
+    }
+    else if( fsi == "Stones" && tsi == "Kilogram" )
+    {
+        kg = ip/0.15747;
+        ci.innerHTML = " Converted Value ("+ tsi +" ) : "+ kg;
+    }
+
+
+    else{
+        window.alert("please Enter valid input(integer!) or check selected field is correct !");
+    }
+}
+
+</script>
